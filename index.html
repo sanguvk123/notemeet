@@ -11,8 +11,8 @@
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', -apple-system, sans-serif;
-      background: #0a0a0f;
-      color: #e4e4e7;
+      background: #000000;
+      color: #f5f5f5;
       line-height: 1.6;
       overflow-x: hidden;
     }
@@ -23,26 +23,27 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 16px 24px;
       display: flex; align-items: center; justify-content: space-between;
-      background: rgba(10,10,15,0.8); backdrop-filter: blur(20px);
+      background: rgba(0,0,0,0.8); backdrop-filter: blur(20px);
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .logo {
-      font-weight: 800; font-size: 22px;
-      background: linear-gradient(135deg, #a78bfa, #60a5fa);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    .logo-wrap { display: flex; align-items: center; gap: 10px; }
+    .logo-text {
+      font-weight: 800; font-size: 20px; color: #f5f5f5;
+      letter-spacing: -0.5px;
     }
     .nav-links { display: flex; gap: 24px; align-items: center; }
     .nav-links a {
-      font-size: 14px; font-weight: 500; color: #a1a1aa; transition: color 0.2s;
+      font-size: 14px; font-weight: 500; color: #a0a0a0; transition: color 0.2s;
     }
-    .nav-links a:hover { color: #fff; }
+    .nav-links a:hover { color: #f5f5f5; }
     .nav-cta {
       padding: 8px 20px; border-radius: 100px;
-      background: linear-gradient(135deg, #7c3aed, #2563eb);
-      color: #fff !important; font-weight: 600; font-size: 14px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.05);
+      color: #f5f5f5 !important; font-weight: 600; font-size: 14px;
+      transition: all 0.2s;
     }
-    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(124,58,237,0.4); }
+    .nav-cta:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); transform: translateY(-1px); }
 
     /* Sections */
     section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
@@ -58,8 +59,8 @@
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 6px 16px; border-radius: 100px;
-      background: rgba(124,58,237,0.12); border: 1px solid rgba(124,58,237,0.25);
-      font-size: 13px; font-weight: 500; color: #a78bfa;
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      font-size: 13px; font-weight: 500; color: #a0a0a0;
       margin-bottom: 24px;
     }
     .hero h1 {
@@ -68,55 +69,54 @@
       max-width: 800px; margin-bottom: 20px;
     }
     .hero h1 .highlight {
-      background: linear-gradient(135deg, #a78bfa, #60a5fa, #34d399);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      color: #f5f5f5;
     }
     .hero p {
       font-size: clamp(16px, 2.5vw, 22px);
-      color: #a1a1aa; max-width: 600px; margin-bottom: 36px; line-height: 1.6;
+      color: #a0a0a0; max-width: 600px; margin-bottom: 36px; line-height: 1.6;
     }
     .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
     .btn-primary {
-      padding: 14px 36px; border-radius: 100px; border: none;
-      background: linear-gradient(135deg, #7c3aed, #2563eb);
-      color: #fff; font-size: 16px; font-weight: 600; cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
+      padding: 14px 36px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.08);
+      color: #f5f5f5; font-size: 16px; font-weight: 600; cursor: pointer;
+      transition: all 0.2s;
     }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(124,58,237,0.4); }
+    .btn-primary:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.4); transform: translateY(-2px); }
     .btn-secondary {
       padding: 14px 36px; border-radius: 100px;
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-      color: #e4e4e7; font-size: 16px; font-weight: 500; cursor: pointer;
-      transition: background 0.2s;
+      background: transparent; border: 1px solid rgba(255,255,255,0.1);
+      color: #a0a0a0; font-size: 16px; font-weight: 500; cursor: pointer;
+      transition: all 0.2s;
     }
-    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+    .btn-secondary:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); color: #f5f5f5; }
 
     .hero-stats {
       display: flex; gap: 40px; margin-top: 60px;
       flex-wrap: wrap; justify-content: center;
     }
     .hero-stat { text-align: center; }
-    .hero-stat .num { font-size: 28px; font-weight: 800; color: #fff; }
-    .hero-stat .label { font-size: 13px; color: #71717a; margin-top: 4px; }
+    .hero-stat .num { font-size: 28px; font-weight: 800; color: #f5f5f5; }
+    .hero-stat .label { font-size: 13px; color: #606060; margin-top: 4px; }
 
-    /* Gradient orbs */
+    /* Gradient orbs — subtle white */
     .hero::before {
       content: ''; position: absolute; top: -30%; left: -20%;
       width: 60%; height: 80%;
-      background: radial-gradient(ellipse, rgba(124,58,237,0.12), transparent 60%);
+      background: radial-gradient(ellipse, rgba(255,255,255,0.04), transparent 60%);
       pointer-events: none;
     }
     .hero::after {
       content: ''; position: absolute; bottom: -20%; right: -20%;
       width: 50%; height: 60%;
-      background: radial-gradient(ellipse, rgba(37,99,235,0.1), transparent 60%);
+      background: radial-gradient(ellipse, rgba(255,255,255,0.03), transparent 60%);
       pointer-events: none;
     }
 
     /* Section headers */
     .section-label {
       font-size: 13px; font-weight: 600; text-transform: uppercase;
-      letter-spacing: 2px; color: #7c3aed; margin-bottom: 12px;
+      letter-spacing: 2px; color: #a0a0a0; margin-bottom: 12px;
     }
     .section-title {
       font-size: clamp(28px, 4vw, 42px);
@@ -138,15 +138,15 @@
       border-radius: 16px; padding: 32px 24px; text-align: left;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .step:hover { border-color: rgba(124,58,237,0.3); transform: translateY(-4px); }
+    .step:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-4px); }
     .step-icon {
       width: 48px; height: 48px; border-radius: 12px;
       display: flex; align-items: center; justify-content: center;
       font-size: 22px; margin-bottom: 16px;
     }
-    .step:nth-child(1) .step-icon { background: rgba(124,58,237,0.15); color: #a78bfa; }
-    .step:nth-child(2) .step-icon { background: rgba(37,99,235,0.15); color: #60a5fa; }
-    .step:nth-child(3) .step-icon { background: rgba(52,211,153,0.15); color: #34d399; }
+    .step:nth-child(1) .step-icon { background: rgba(255,255,255,0.08); color: #f5f5f5; }
+    .step:nth-child(2) .step-icon { background: rgba(255,255,255,0.06); color: #d0d0d0; }
+    .step:nth-child(3) .step-icon { background: rgba(255,255,255,0.04); color: #a0a0a0; }
     .step h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
     .step p { font-size: 14px; color: #a1a1aa; line-height: 1.6; }
 
@@ -168,13 +168,13 @@
       display: inline-block; margin-top: 12px;
       padding: 3px 10px; border-radius: 100px;
       font-size: 11px; font-weight: 600; text-transform: uppercase;
-      background: rgba(52,211,153,0.12); color: #34d399;
+      background: rgba(255,255,255,0.06); color: #a0a0a0;
     }
 
     /* India specific */
     .india {
       text-align: center;
-      background: linear-gradient(180deg, transparent, rgba(124,58,237,0.04), transparent);
+      background: linear-gradient(180deg, transparent, rgba(255,255,255,0.02), transparent);
       border-radius: 24px; padding: 80px 24px;
     }
     .india-grid {
@@ -203,15 +203,17 @@
       transition: border-color 0.2s;
     }
     .pricing-card.featured {
-      border-color: rgba(124,58,237,0.4);
-      background: rgba(124,58,237,0.06);
+      border-color: rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.04);
       position: relative;
     }
     .pricing-card.featured::before {
       content: 'Most Popular'; position: absolute; top: -12px; left: 50%;
       transform: translateX(-50%);
       padding: 4px 16px; border-radius: 100px;
-      background: linear-gradient(135deg, #7c3aed, #2563eb);
+      background: #1a1a1a;
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #f5f5f5;
       font-size: 12px; font-weight: 600; white-space: nowrap;
     }
     .pricing-card .plan { font-size: 14px; font-weight: 600; color: #a1a1aa; text-transform: uppercase; letter-spacing: 1px; }
@@ -223,18 +225,18 @@
       padding: 6px 0; font-size: 14px; color: #d4d4d8;
       display: flex; align-items: center; gap: 8px;
     }
-    .pricing-card ul li::before { content: '✓'; color: #34d399; font-weight: 700; }
+    .pricing-card ul li::before { content: '✓'; color: #909090; font-weight: 700; }
 
     /* Waitlist */
     .waitlist {
       text-align: center;
-      background: linear-gradient(135deg, rgba(124,58,237,0.06), rgba(37,99,235,0.06));
-      border: 1px solid rgba(124,58,237,0.12);
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
       border-radius: 24px; padding: 64px 32px;
       margin: 0 24px 40px; max-width: 700px; margin-left: auto; margin-right: auto;
     }
     .waitlist h2 { font-size: clamp(24px, 3vw, 34px); font-weight: 800; }
-    .waitlist p { color: #a1a1aa; margin: 12px 0 32px; font-size: 16px; }
+    .waitlist p { color: #a0a0a0; margin: 12px 0 32px; font-size: 16px; }
     .waitlist-form {
       display: flex; gap: 12px; max-width: 480px; margin: 0 auto;
       flex-wrap: wrap; justify-content: center;
@@ -242,40 +244,58 @@
     .waitlist-form input, .waitlist-form select {
       flex: 1; min-width: 200px;
       padding: 12px 18px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.05); color: #e4e4e7;
+      background: rgba(255,255,255,0.05); color: #f5f5f5;
       font-size: 15px; font-family: inherit; outline: none;
       transition: border-color 0.2s;
     }
     .waitlist-form input:focus, .waitlist-form select:focus {
-      border-color: #7c3aed;
+      border-color: rgba(255,255,255,0.3);
     }
-    .waitlist-form select option { background: #1a1a2e; color: #e4e4e7; }
+    .waitlist-form select option { background: #000000; color: #f5f5f5; }
     .waitlist-form button {
-      padding: 12px 28px; border-radius: 100px; border: none;
-      background: linear-gradient(135deg, #7c3aed, #2563eb);
-      color: #fff; font-size: 15px; font-weight: 600; cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s; white-space: nowrap;
+      padding: 12px 28px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.08);
+      color: #f5f5f5; font-size: 15px; font-weight: 600; cursor: pointer;
+      transition: all 0.2s; white-space: nowrap;
     }
-    .waitlist-form button:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(124,58,237,0.4); }
+    .waitlist-form button:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); transform: translateY(-1px); }
     .waitlist-form button:disabled { opacity: 0.5; cursor: not-allowed; }
-    .waitlist-success { margin-top: 16px; font-size: 16px; min-height: 24px; color: #34d399; font-weight: 600; }
+    .waitlist-success { margin-top: 16px; font-size: 16px; min-height: 24px; color: #d0d0d0; font-weight: 600; }
 
     /* Live counter */
     .live-counter {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 6px 16px; border-radius: 100px;
-      background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.2);
-      font-size: 13px; color: #34d399; margin-top: 40px;
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      font-size: 13px; color: #a0a0a0; margin-top: 40px;
     }
     .live-dot {
       width: 8px; height: 8px; border-radius: 50%;
-      background: #34d399; animation: pulse 2s infinite;
+      background: #a0a0a0; animation: pulse 2s infinite;
     }
     @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.3; } }
     .recent-join {
-      font-size: 12px; color: #71717a; margin-top: 6px;
+      font-size: 12px; color: #606060; margin-top: 6px;
       transition: opacity 0.3s;
     }
+
+    /* Download section */
+    .download {
+      text-align: center; padding: 80px 24px;
+    }
+    .dl-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 16px 40px; border-radius: 100px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.08);
+      color: #f5f5f5; font-size: 17px; font-weight: 600; cursor: pointer;
+      transition: all 0.2s; text-decoration: none; font-family: inherit;
+      margin-top: 32px;
+    }
+    .dl-btn:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); transform: translateY(-2px); }
+    .dl-note { font-size: 13px; color: #606060; margin-top: 12px; }
+    .dl-meta { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+    .dl-meta span { font-size: 12px; color: #606060; }
 
     /* Footer */
     footer {
@@ -315,13 +335,21 @@
 
   <!-- Nav -->
   <nav>
-    <div class="logo">NoteMeet</div>
+    <a href="#hero" class="logo-wrap">
+      <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+        <rect x="2" y="2" width="96" height="96" rx="20" fill="#000" stroke="#2a2a2a" strokeWidth="2"/>
+        <line x1="30" y1="25" x2="30" y2="75" stroke="#f5f5f5" strokeWidth="10" strokeLinecap="round"/>
+        <line x1="30" y1="75" x2="70" y2="25" stroke="#f5f5f5" strokeWidth="10" strokeLinecap="round"/>
+        <line x1="70" y1="25" x2="70" y2="75" stroke="#f5f5f5" strokeWidth="10" strokeLinecap="round"/>
+      </svg>
+      <span class="logo-text">NoteMeet</span>
+    </a>
     <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
     <div class="nav-links">
       <a href="#how">How it Works</a>
       <a href="#features">Features</a>
       <a href="#pricing">Pricing</a>
-      <a href="#waitlist" class="nav-cta">Get Beta Access</a>
+      <a href="#download" class="nav-cta">Download</a>
     </div>
   </nav>
 
@@ -518,9 +546,33 @@
     </div>
   </section>
 
+  <!-- Download -->
+  <section class="download" id="download">
+    <div class="section-label">Download</div>
+    <h2 class="section-title">NoteMeet v0.1.0 Beta</h2>
+    <p class="section-desc" style="margin:0 auto;text-align:center">
+      macOS 13+ (Apple Silicon) — Free during beta. No sign-up required.
+    </p>
+    <a class="dl-btn" href="https://github.com/sanguvk123/notemeet-app/releases/download/v0.1.0-beta/NoteMeet-0.1.0-beta-aarch64.dmg">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Download DMG · 39 MB
+    </a>
+    <div class="dl-meta">
+      <span>Apple Silicon (M1–M4)</span>
+      <span>●</span>
+      <span>macOS 13+</span>
+      <span>●</span>
+      <a href="https://sanguvk123.github.io/notemeet-app/" style="color:#a0a0a0;text-decoration:underline;font-size:12px;" target="_blank">Open Web App →</a>
+    </div>
+  </section>
+
   <!-- Waitlist -->
   <section class="waitlist" id="waitlist">
-    <h2>🍏 NoteMeet v1 for Mac</h2>
+    <h2>NoteMeet v1 for Mac</h2>
     <p>Beta is live. Get early access — we're onboarding founders and tech teams first.</p>
 
     <div class="waitlist-success" id="waitlistSuccess" style="display:none;">
